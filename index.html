@@ -336,43 +336,124 @@
       transform: scale(1.08);
     }
 
+    .packs-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .packs-header h2 {
+      margin-bottom: 16px;
+    }
+
+    .packs-header p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
     .packs-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
     }
 
-    .packs-image {
-      max-height: 400px;
-      overflow: hidden;
+    .pack-card {
+      background: white;
       border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-      padding: 40px;
+      padding: 32px 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
     }
 
-    .packs-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
+    .pack-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #40916c 0%, #52b788 100%);
+      transform: scaleX(0);
       transition: transform 0.4s ease;
     }
 
-    .packs-image:hover img {
-      transform: scale(1.05);
+    .pack-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(82, 183, 136, 0.25);
+      border-color: #52b788;
     }
 
-    .packs-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 30px 0 0;
+    .pack-card:hover::before {
+      transform: scaleX(1);
     }
 
-    .packs-content li {
-      margin-bottom: 20px;
+    .pack-image {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .pack-image img {
+      max-width: 85%;
+      max-height: 85%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .pack-card:hover .pack-image img {
+      transform: scale(1.1);
+    }
+
+    .pack-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2d6a4f;
+      margin-bottom: 12px;
+      font-family: 'Oswald', Arial, sans-serif;
+    }
+
+    .pack-quantity {
+      font-size: 1.05rem;
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+
+    .pack-description {
+      font-size: 0.95rem;
+      color: #6b7280;
       line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .pack-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, #40916c 0%, #52b788 100%);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .pack-card.featured {
+      background: linear-gradient(135deg, #f0f9f4 0%, #ffffff 100%);
+      border-color: #52b788;
+    }
+
+    .pack-card.featured .pack-badge {
+      background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
     }
 
     .footer-actions {
@@ -429,12 +510,17 @@
     }
 
     @media (max-width: 768px) {
-      .about-grid, .packs-grid {
+      .about-grid {
         grid-template-columns: 1fr;
         gap: 40px;
       }
 
-      .about-image, .packs-image {
+      .packs-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .about-image {
         max-height: 300px;
       }
 
@@ -450,8 +536,12 @@
         font-size: 1.75rem;
       }
 
-      .packs-image {
-        padding: 20px;
+      .pack-image {
+        height: 160px;
+      }
+
+      .packs-header {
+        margin-bottom: 40px;
       }
     }
 
@@ -566,22 +656,55 @@
   </section>
 
   <section class="section packs">
-    <div class="container packs-grid">
-
-      <div class="packs-image">
-        <img src="images/TNJ Case.png"
-             alt="Tahitian Noni Juice Starter Packs">
+    <div class="container">
+      
+      <div class="packs-header">
+        <h2>Choose Your Starter Pack</h2>
+        <p>Select the perfect package to begin your wellness journey or build your business</p>
       </div>
 
-      <div class="packs-content">
-        <h2>Choose Your Starter Pack</h2>
+      <div class="packs-grid">
+        
+        <div class="pack-card">
+          <div class="pack-image">
+            <img src="images/DEC 3.png" alt="Activated Pack - 1 Case">
+          </div>
+          <h3 class="pack-title">Activated Pack</h3>
+          <p class="pack-quantity">1 Case</p>
+          <p class="pack-description">Perfect for personal wellness. Start your daily noni routine with one full case.</p>
+          <span class="pack-badge">Starter</span>
+        </div>
 
-        <ul>
-          <li><strong>Activated Pack</strong><br>1 Case</li>
-          <li><strong>Business Pack</strong><br>2 Cases</li>
-          <li><strong>Elite Pack</strong><br>4 Cases</li>
-          <li><strong>Ultimate Pack</strong><br>8 Cases</li>
-        </ul>
+        <div class="pack-card featured">
+          <div class="pack-image">
+            <img src="images/DEC 3.png" alt="Business Pack - 2 Cases">
+          </div>
+          <h3 class="pack-title">Business Pack</h3>
+          <p class="pack-quantity">2 Cases</p>
+          <p class="pack-description">Ideal for sharing with family or starting to build your wellness business.</p>
+          <span class="pack-badge">Popular</span>
+        </div>
+
+        <div class="pack-card">
+          <div class="pack-image">
+            <img src="images/TNJ Case.png" alt="Elite Pack - 4 Cases">
+          </div>
+          <h3 class="pack-title">Elite Pack</h3>
+          <p class="pack-quantity">4 Cases</p>
+          <p class="pack-description">Serious about wellness and business growth. Stock up and save more.</p>
+          <span class="pack-badge">Best Value</span>
+        </div>
+
+        <div class="pack-card">
+          <div class="pack-image">
+            <img src="images/TNJ Case.png" alt="Ultimate Pack - 8 Cases">
+          </div>
+          <h3 class="pack-title">Ultimate Pack</h3>
+          <p class="pack-quantity">8 Cases</p>
+          <p class="pack-description">Maximum savings and business impact. For committed entrepreneurs.</p>
+          <span class="pack-badge">Premium</span>
+        </div>
+
       </div>
 
     </div>
