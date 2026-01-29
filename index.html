@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Tahitian Noni Juice | Daily Wellness</title>
@@ -7,15 +7,26 @@
   <meta name="viewport" content="width=device-width" />
   <meta name="description" content="Support your body daily with Tahitian Noni Juice. Immune, gut, and energy support backed by science." />
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Montserrat, Arial, sans-serif;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       background: #ffffff;
-      color: #222;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .container {
@@ -25,25 +36,120 @@
     }
 
     h1, h2, h3 {
-      font-family: Oswald, Arial, sans-serif;
+      font-family: 'Oswald', Arial, sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: #2d6a4f;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #4a5568;
+      margin-bottom: 16px;
     }
 
     .hero {
-      background: #eef7f5;
-      padding: 80px 20px;
+      background: linear-gradient(135deg, #d8f3dc 0%, #f0f9f4 50%, #ffffff 100%);
+      padding: 100px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(82, 154, 84, 0.1) 0%, transparent 70%);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(-20px, 20px) rotate(5deg); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      gap: 60px;
       align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-grid > div:first-child {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .hero-grid > div:last-child {
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    .hero-grid img {
+      filter: drop-shadow(0 20px 40px rgba(45, 106, 79, 0.2));
+      transition: transform 0.5s ease;
+    }
+
+    .hero-grid img:hover {
+      transform: scale(1.05) rotate(-2deg);
     }
 
     .how-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 60px;
       align-items: center;
     }
 
@@ -51,32 +157,76 @@
       .how-grid {
         grid-template-columns: 1fr;
       }
+      .hero {
+        padding: 60px 20px;
+      }
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 12px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
     .btn-primary {
-      background: #529a54;
+      background: linear-gradient(135deg, #40916c 0%, #52b788 100%);
       color: #fff;
-      padding: 14px 26px;
-      border-radius: 40px;
-      text-decoration: none;
-      display: inline-block;
-      margin-right: 10px;
+      border: none;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(64, 145, 108, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
     }
 
     .btn-secondary {
-      border: 2px solid #529a54;
-      color: #529a54;
-      padding: 12px 24px;
-      border-radius: 40px;
-      text-decoration: none;
+      border: 2.5px solid #40916c;
+      color: #40916c;
+      background: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background: #40916c;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(64, 145, 108, 0.3);
     }
 
     .section {
-      padding: 80px 20px;
+      padding: 100px 20px;
+      position: relative;
     }
 
     .light {
-      background: #cadfca;
+      background: linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 100%);
     }
 
     .packs ul {
@@ -85,38 +235,238 @@
     }
 
     .packs li {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      padding: 20px 24px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-left: 4px solid #52b788;
+    }
+
+    .packs li:hover {
+      transform: translateX(8px);
+      box-shadow: 0 8px 25px rgba(82, 183, 136, 0.2);
     }
 
     .footer {
-      background: #eee;
-      padding: 60px 20px;
+      background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+      padding: 80px 20px;
+      color: #ffffff;
+    }
+
+    .footer-note {
+      color: rgba(255, 255, 255, 0.8);
     }
 
     .floating-whatsapp {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
+      bottom: 24px;
+      right: 24px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
       color: #fff;
-      padding: 14px 22px;
-      border-radius: 30px;
+      padding: 16px 26px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       z-index: 9999;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+      }
+      50% {
+        box-shadow: 0 8px 40px rgba(37, 211, 102, 0.6);
+      }
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
     }
 
     video {
       width: 100%;
       max-width: 520px;
-      border-radius: 12px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    video:hover {
+      transform: scale(1.02);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: stretch;
+    }
+
+    .about-image {
+      max-height: 400px;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      position: relative;
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(45, 106, 79, 0.1) 100%);
+      pointer-events: none;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .about-image:hover img {
+      transform: scale(1.08);
+    }
+
+    .packs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .packs-image {
+      max-height: 400px;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 40px;
+    }
+
+    .packs-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .packs-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .packs-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0 0;
+    }
+
+    .packs-content li {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .footer-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-btn {
+      display: inline-block;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      text-decoration: none;
+      text-align: center;
+      min-width: 240px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer-btn.primary {
+      background: linear-gradient(135deg, #52b788 0%, #40916c 100%);
+      color: #ffffff;
+      border: none;
+    }
+
+    .footer-btn.secondary {
+      border: 2.5px solid #52b788;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .footer-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-btn.secondary:hover {
+      background: #ffffff;
+      color: #2d6a4f;
+    }
+
+    .footer-note {
+      width: 100%;
+      text-align: center;
+      font-size: 0.95rem;
+      margin-top: 30px;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid, .packs-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-image, .packs-image {
+        max-height: 300px;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      .packs-image {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
@@ -149,88 +499,14 @@
     </div>
   </section>
 
- 
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>About – Tahitian Noni Juice</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Montserrat, Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-    }
-
-    h2 {
-      font-family: Oswald, Arial, sans-serif;
-      margin-top: 0;
-    }
-
-    .section {
-      padding: 80px 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    /* ABOUT GRID */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: stretch;
-    }
-
-    /* IMAGE CONTAINER */
-    .about-image {
-      max-height: 320px;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image {
-        max-height: 260px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- ABOUT -->
   <section class="section">
     <div class="container about-grid">
 
-      <!-- IMAGE (LEFT – MATCHES TEXT HEIGHT) -->
       <div class="about-image">
         <img src="images/PTR_TNJ_Tahitian_Noni_Science_PPT_V047.jpg"
              alt="Tahitian Noni Juice Science">
       </div>
 
-      <!-- TEXT (RIGHT) -->
       <div>
         <h2>Why Tahitian Noni Juice</h2>
 
@@ -250,21 +526,16 @@
         <p>
           The product is supported by published research and verified through
           authenticity testing presented at the American Chemical Society by
-          Partner.Co’s Senior R&D Director.
+          Partner.Co's Senior R&D Director.
         </p>
       </div>
 
     </div>
   </section>
 
-</body>
-</html>
-
-  <!-- HOW IT WORKS -->
   <section class="section light">
     <div class="container how-grid">
 
-      <!-- TEXT (LEFT) -->
       <div>
         <h2>How It Works</h2>
 
@@ -284,7 +555,6 @@
         </p>
       </div>
 
-      <!-- VIDEO (RIGHT) -->
       <div>
         <video controls preload="metadata">
           <source src="images/How It Works - TNJ.mp4" type="video/mp4">
@@ -295,99 +565,14 @@
     </div>
   </section>
 
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Tahitian Noni Juice – Starter Packs</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Montserrat, Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-    }
-
-    h2 {
-      font-family: Oswald, Arial, sans-serif;
-      margin-top: 0;
-    }
-
-    .section {
-      padding: 80px 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    /* PACKS GRID */
-    .packs-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    /* IMAGE CONTROL */
-    .packs-image {
-      max-height: 320px;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .packs-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* PACK LIST */
-    .packs-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0 0;
-    }
-
-    .packs-content li {
-      margin-bottom: 16px;
-      line-height: 1.4;
-    }
-
-    /* MOBILE STACK */
-    @media (max-width: 768px) {
-      .packs-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .packs-image {
-        max-height: 260px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- PACKS -->
   <section class="section packs">
     <div class="container packs-grid">
 
-      <!-- IMAGE (LEFT) -->
       <div class="packs-image">
         <img src="images/TNJ Case.png"
              alt="Tahitian Noni Juice Starter Packs">
       </div>
 
-      <!-- TEXT (RIGHT) -->
       <div class="packs-content">
         <h2>Choose Your Starter Pack</h2>
 
@@ -402,330 +587,6 @@
     </div>
   </section>
 
-</body>
-</html>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Tahitian Noni Juice | Daily Wellness</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Montserrat, Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1, h2, h3 {
-      font-family: Oswald, Arial, sans-serif;
-    }
-
-    /* FOOTER */
-    .footer {
-      background: #f3f3f3;
-      padding: 60px 20px;
-    }
-
-    .footer-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .footer-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-size: 14px;
-      text-decoration: none;
-      text-align: center;
-      min-width: 220px;
-      font-family: Montserrat, Arial, sans-serif;
-    }
-
-    .footer-btn.primary {
-      background: #529a54;
-      color: #ffffff;
-    }
-
-    .footer-btn.secondary {
-      border: 2px solid #529a54;
-      color: #529a54;
-      background: transparent;
-    }
-
-    .footer-btn:hover {
-      opacity: 0.9;
-    }
-
-    .footer-note {
-      font-size: 14px;
-      color: #555;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Tahitian Noni Juice | Daily Wellness</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Montserrat, Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1, h2, h3 {
-      font-family: Oswald, Arial, sans-serif;
-    }
-
-    /* FOOTER */
-    .footer {
-      background: #f3f3f3;
-      padding: 60px 20px;
-    }
-
-    .footer-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-size: 14px;
-      text-decoration: none;
-      text-align: center;
-      min-width: 220px;
-      font-family: Montserrat, Arial, sans-serif;
-      transition: opacity 0.2s ease;
-    }
-
-    .footer-btn.primary {
-      background: #529a54;
-      color: #ffffff;
-    }
-
-    .footer-btn.secondary {
-      border: 2px solid #529a54;
-      color: #529a54;
-      background: transparent;
-    }
-
-    .footer-btn:hover {
-      opacity: 0.9;
-    }
-
-    .footer-note {
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Tahitian Noni Juice | Daily Wellness</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Montserrat, Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1, h2, h3 {
-      font-family: Oswald, Arial, sans-serif;
-    }
-
-    /* FOOTER */
-    .footer {
-      background: #f3f3f3;
-      padding: 60px 20px;
-    }
-
-    .footer-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-size: 14px;
-      text-decoration: none;
-      text-align: center;
-      min-width: 220px;
-      font-family: Montserrat, Arial, sans-serif;
-      transition: opacity 0.2s ease;
-    }
-
-    .footer-btn.primary {
-      background: #529a54;
-      color: #ffffff;
-    }
-
-    .footer-btn.secondary {
-      border: 2px solid #529a54;
-      color: #529a54;
-      background: transparent;
-    }
-
-    .footer-btn:hover {
-      opacity: 0.9;
-    }
-
-    .footer-note {
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Tahitian Noni Juice | Daily Wellness</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Montserrat, Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1, h2, h3 {
-      font-family: Oswald, Arial, sans-serif;
-    }
-
-    /* FOOTER */
-    .footer {
-      background: #f3f3f3;
-      padding: 60px 20px;
-    }
-
-    .footer-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-size: 14px;
-      text-decoration: none;
-      text-align: center;
-      min-width: 220px;
-      font-family: Montserrat, Arial, sans-serif;
-      transition: opacity 0.2s ease;
-    }
-
-    .footer-btn.primary {
-      background: #529a54;
-      color: #ffffff;
-    }
-
-    .footer-btn.secondary {
-      border: 2px solid #529a54;
-      color: #529a54;
-      background: transparent;
-    }
-
-    .footer-btn:hover {
-      opacity: 0.9;
-    }
-
-    .footer-note {
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- FOOTER -->
   <section class="footer">
     <div class="container footer-actions">
 
@@ -742,24 +603,12 @@
       </a>
 
       <p class="footer-note">
-        © 2025. All rights reserved.
+         2025. All rights reserved.
       </p>
 
     </div>
   </section>
 
-</body>
-</html>
-
-</body>
-</html>
-
-
-</body>
-</html>
-
-
-  <!-- FLOATING WHATSAPP -->
   <a class="floating-whatsapp"
      href="https://chat.whatsapp.com/CJ2CmmrXNxUAYV6MgjxSVV"
      target="_blank">

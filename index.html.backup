@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tahitian Noni Juice | Daily Wellness</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content="Support your body daily with Tahitian Noni Juice. Immune, gut, and energy support backed by science." />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: Oswald, Arial, sans-serif;
+    }
+
+    .hero {
+      background: #eef7f5;
+      padding: 80px 20px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn-primary {
+      background: #529a54;
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 40px;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .btn-secondary {
+      border: 2px solid #529a54;
+      color: #529a54;
+      padding: 12px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+    }
+
+    .section {
+      padding: 80px 20px;
+    }
+
+    .light {
+      background: #cadfca;
+    }
+
+    .packs ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .packs li {
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      background: #f3f3f3;
+      padding: 60px 20px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 9999;
+    }
+
+    video {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 12px;
+    }
+
+    /* ABOUT GRID */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    /* IMAGE CONTAINER */
+    .about-image {
+      max-height: 320px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* PACKS GRID */
+    .packs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* IMAGE CONTROL */
+    .packs-image {
+      max-height: 320px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .packs-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* PACK LIST */
+    .packs-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .packs-content li {
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .footer-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+      min-width: 220px;
+      font-family: Montserrat, Arial, sans-serif;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-btn.primary {
+      background: #529a54;
+      color: #ffffff;
+    }
+
+    .footer-btn.secondary {
+      border: 2px solid #529a54;
+      color: #529a54;
+      background: transparent;
+    }
+
+    .footer-btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer-note {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .about-grid, .packs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image, .packs-image {
+        max-height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="container about-grid">
+
+      <!-- IMAGE (LEFT – MATCHES TEXT HEIGHT) -->
+      <div class="about-image">
+        <img src="images/PTR_TNJ_Tahitian_Noni_Science_PPT_V047.jpg"
+             alt="Tahitian Noni Juice Science">
+      </div>
+
+      <!-- TEXT (RIGHT) -->
+      <div>
+        <h2>Why Tahitian Noni Juice</h2>
+
+        <p>
+          Tahitian Noni Juice comes from the noni fruit, known scientifically as
+          <em>Morinda citrifolia</em>. For centuries, Polynesian communities used
+          this fruit as part of daily life to support resilience, recovery,
+          and overall vitality.
+        </p>
+
+        <p>
+          Partner.Co sources noni exclusively from Tahiti, where the fruit grows
+          in volcanic soil and is harvested by hand at peak ripeness. This
+          preserves key compounds such as iridoids and antioxidants.
+        </p>
+
+        <p>
+          The product is supported by published research and verified through
+          authenticity testing presented at the American Chemical Society by
+          Partner.Co’s Senior R&D Director.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+  <!-- HOW IT WORKS -->
+  <section class="section light">
+    <div class="container how-grid">
+
+      <!-- TEXT (LEFT) -->
+      <div>
+        <h2>How It Works</h2>
+
+        <p>
+          <strong>1. Drink daily</strong><br>
+          Take 2 fl oz each day. Noni supports the body best when taken consistently.
+        </p>
+
+        <p>
+          <strong>2. Let your body respond</strong><br>
+          Research shows noni helps regulate immune response and antioxidant activity.
+        </p>
+
+        <p>
+          <strong>3. Build long-term wellness</strong><br>
+          Use for personal health or share as part of a wellness-based income path.
+        </p>
+      </div>
+
+      <!-- VIDEO (RIGHT) -->
+      <div>
+        <video controls preload="metadata">
+          <source src="images/How It Works - TNJ.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </section>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Tahitian Noni Juice – Starter Packs</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    h2 {
+      font-family: Oswald, Arial, sans-serif;
+      margin-top: 0;
+    }
+
+    .section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    /* PACKS GRID */
+    .packs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* IMAGE CONTROL */
+    .packs-image {
+      max-height: 320px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .packs-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* PACK LIST */
+    .packs-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .packs-content li {
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    /* MOBILE STACK */
+    @media (max-width: 768px) {
+      .packs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .packs-image {
+        max-height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PACKS -->
+  <section class="section packs">
+    <div class="container packs-grid">
+
+      <!-- IMAGE (LEFT) -->
+      <div class="packs-image">
+        <img src="images/TNJ Case.png"
+             alt="Tahitian Noni Juice Starter Packs">
+      </div>
+
+      <!-- TEXT (RIGHT) -->
+      <div class="packs-content">
+        <h2>Choose Your Starter Pack</h2>
+
+        <ul>
+          <li><strong>Activated Pack</strong><br>1 Case</li>
+          <li><strong>Business Pack</strong><br>2 Cases</li>
+          <li><strong>Elite Pack</strong><br>4 Cases</li>
+          <li><strong>Ultimate Pack</strong><br>8 Cases</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tahitian Noni Juice | Daily Wellness</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: Oswald, Arial, sans-serif;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #f3f3f3;
+      padding: 60px 20px;
+    }
+
+    .footer-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+      min-width: 220px;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    .footer-btn.primary {
+      background: #529a54;
+      color: #ffffff;
+    }
+
+    .footer-btn.secondary {
+      border: 2px solid #529a54;
+      color: #529a54;
+      background: transparent;
+    }
+
+    .footer-btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer-note {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tahitian Noni Juice | Daily Wellness</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: Oswald, Arial, sans-serif;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #f3f3f3;
+      padding: 60px 20px;
+    }
+
+    .footer-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+      min-width: 220px;
+      font-family: Montserrat, Arial, sans-serif;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-btn.primary {
+      background: #529a54;
+      color: #ffffff;
+    }
+
+    .footer-btn.secondary {
+      border: 2px solid #529a54;
+      color: #529a54;
+      background: transparent;
+    }
+
+    .footer-btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer-note {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tahitian Noni Juice | Daily Wellness</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: Oswald, Arial, sans-serif;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #f3f3f3;
+      padding: 60px 20px;
+    }
+
+    .footer-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+      min-width: 220px;
+      font-family: Montserrat, Arial, sans-serif;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-btn.primary {
+      background: #529a54;
+      color: #ffffff;
+    }
+
+    .footer-btn.secondary {
+      border: 2px solid #529a54;
+      color: #529a54;
+      background: transparent;
+    }
+
+    .footer-btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer-note {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tahitian Noni Juice | Daily Wellness</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: Oswald, Arial, sans-serif;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #f3f3f3;
+      padding: 60px 20px;
+    }
+
+    .footer-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+      min-width: 220px;
+      font-family: Montserrat, Arial, sans-serif;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-btn.primary {
+      background: #529a54;
+      color: #ffffff;
+    }
+
+    .footer-btn.secondary {
+      border: 2px solid #529a54;
+      color: #529a54;
+      background: transparent;
+    }
+
+    .footer-btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer-note {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    <div class="container footer-actions">
+
+      <a class="footer-btn primary"
+         href="https://partner.co/en-us/shop/product/tahitian-noni"
+         target="_blank">
+        Buy Tahitian Noni Juice
+      </a>
+
+      <a class="footer-btn secondary"
+         href="https://chat.whatsapp.com/CJ2CmmrXNxUAYV6MgjxSVV"
+         target="_blank">
+        Chat on WhatsApp
+      </a>
+
+      <p class="footer-note">
+        © 2025. All rights reserved.
+      </p>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+</body>
+</html>
+
+
+</body>
+</html>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="floating-whatsapp"
+     href="https://chat.whatsapp.com/CJ2CmmrXNxUAYV6MgjxSVV"
+     target="_blank">
+    Chat on WhatsApp
+  </a>
+
+</body>
+</html>
